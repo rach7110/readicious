@@ -2,8 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# Force your application to not access the DB or load models when precompiling your assets (deploying Rails 3.1 on Heroku)
-config.assets.initialize_on_precompile = false
+
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -35,6 +34,9 @@ module Readit
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Force your application to not access the DB or load models when precompiling your assets (deploying Rails 3.1 on Heroku)
+    config.assets.initialize_on_precompile = false
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
