@@ -1,0 +1,7 @@
+Migrations: db: rollback
+	When you mess something up and need to go back a step or more, run 
+  	'rake db: rollback' 
+    or
+  	'rake db:rollback STEP=2'
+
+  	NOTE: could run db:drop AND db:create (or db:reset), but sometimes PC doesn't allow permission.
