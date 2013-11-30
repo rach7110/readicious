@@ -1,2 +1,4 @@
 %h1 
-	Hello World! This is link SHOW view
+	=@link.title
+%p
+	=link_to "#{@link.url}", @link.url
