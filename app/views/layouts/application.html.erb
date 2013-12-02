@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Readit</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>Readit</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+	<body>
+		<div id="wrapper">
+			<!-- Header -->
+			<div id="header">
+				<!-- Logo -->
+				<a id="logo" href= "/", ><img id="logo" src="/assets/boy.bmp" alt="Readit Logo"></a>
+				<!-- Webpage Name -->
+				<p>Read It!</p>
+			</div>
 
-<%# user is logged in, show log out link %>
-<% if current_user.present? %>
-	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-	<% else %>
-	<%= link_to 'Sign In', new_user_session_path %> |
-	<%= link_to 'Register Now', new_user_registration_path %>
-<% end %>
+			<!-- Main Content -->
+			<div id="main">
+				<!-- Error Messages -->
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
 
-<%= yield %>
+				<%= yield %>
+				<br/>
+				<br/>
 
-</body>
+				<%# user is logged in, show log out link %>
+				<% if current_user.present? %>
+				<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+				<% else %>
+				<%= link_to 'Sign In', new_user_session_path %> |
+				<%= link_to 'Register Now', new_user_registration_path %>
+				<% end %>
+			</div>
+
+		</div>
+	</body>
 </html>
