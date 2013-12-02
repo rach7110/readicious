@@ -17,3 +17,9 @@ Rails Forms:
 ref (old project): https://github.com/makersquare/ideator/blob/master/app/views/ideas/_form.html.erb
 ref (docs): http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html
 **************************************************************************************************
+Production Deployment (Heroku)
+	1. Need to change the production db in gem file to postgres
+	2. Need to commit to github and then push to Heroku
+	3. Need to migrate db on heroku. 'heroku run rake db:migrate'
+	3. (Devise) Need to add a secret_key to the config/initialzer/devise.rb. Run 'rake secret' to generate.
+	**************************************************************************************************
