@@ -1,1 +1,4 @@
 <%= link_to "Add a New Link", new_link_path %>
+<%- @links.each do |link| %>
+	<%= link.title %>
+<%- end %>

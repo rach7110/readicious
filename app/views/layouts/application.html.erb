@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>Readicious</title>
+	  <title>Read'icious</title>
 	  <%= stylesheet_link_tag    "application", :media => "all" %>
 	  <%= javascript_include_tag "application" %>
 	  <%= csrf_meta_tags %>
@@ -12,17 +12,18 @@
 			<!-- Header -->
 			<div id="header">
 				<!-- Logo -->
-				<a id="logo" href= "/", ><img id="logo" src="/assets/boy.bmp" alt="Readicious Logo"></a>
+				<a id="logo" href= "/", ><img id="logo" src="/assets/boy.bmp" alt="Read'icious Logo"></a>
 				<!-- Webpage Name -->
 				<p>Read'icious!</p>
 			</div>
 
 			<!-- Main Content -->
 			<div id="main">
+				<a href="/">Home</a>
 				<!-- Error Messages -->
 				<p class="notice"><%= notice %></p>
 				<p class="alert"><%= alert %></p>
-
+				<br/>
 				<%= yield %>
 				<br/>
 				<br/>
