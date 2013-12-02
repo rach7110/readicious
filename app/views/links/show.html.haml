@@ -5,7 +5,6 @@
 
 %table
 	%tr
-		%td= @link.title 
 		%td= link_to "Show", link_path
 		%td= link_to 'Edit', edit_link_path
 		%td= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }
