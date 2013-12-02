@@ -1,4 +1,9 @@
 <%= link_to "Add a New Link", new_link_path %>
-<%- @links.each do |link| %>
-	<%= link.title %>
+</br>
+</br>
+<h2>Links:</h2>
+<%- @links.each do |l| %>
+	<%= link_to l.title, l %>
+	<%= link_to "Show", l %>
+	</br>
 <%- end %>
