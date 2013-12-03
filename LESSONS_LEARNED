@@ -23,6 +23,16 @@ Production Deployment (Heroku)
 	3. Need to migrate db on heroku. 'heroku run rake db:migrate'
 	3. (Devise) Need to add a secret_key to the config/initialzer/devise.rb. Run 'rake secret' to generate.
 **************************************************************************************************
+Rails current_page? Syntax:
+
+	current_page?(root_path)
+	or 
+	current_page?(path)
+	or 
+	current_page?(url_for(:controller => 'pages', :action => 'main'))
+	--It seems the helper expects a string (above example).
+	
+**************************************************************************************************
 DB commands:
 (rails 3.2.12)
 
