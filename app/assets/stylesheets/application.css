@@ -28,6 +28,12 @@
 	color: purple;
 }
 
+.comments {
+/*	text-decoration: none;*/
+	color: blue;
+	font-size: 10px;
+}
+
 #wrapper {
 	position: relative;
 }

@@ -1,4 +1,11 @@
-**************************************************************************************************
+
+*********************************************************************************************
+Static pages don't need a model (not going to save to the DB) and can have controllers without any methods. 
+
+*********************************************************************************************
+You aren't bound to just using controllers that are directly associated with models in the database. (ie: pages#index controller and action used to display all links by adding an instance variable @links = Link.all to the pages#index controller and action.) 
+
+*********************************************************************************************
 Migrations: db: rollback
 	When you mess something up and need to go back a step or more, run 
   	'rake db: rollback' 
@@ -31,7 +38,7 @@ Rails current_page? Syntax:
 	or 
 	current_page?(url_for(:controller => 'pages', :action => 'main'))
 	--It seems the helper expects a string (above example).
-	
+
 **************************************************************************************************
 DB commands:
 (rails 3.2.12)

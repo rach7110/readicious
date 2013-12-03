@@ -2,3 +2,9 @@
 - @links.each do |l|
 	= link_to l.title, l
 	%br
+	=link_to "Comments", link_path(l), class: "comments"
+	%br
+
+
+	/ %p
+	/ =link_to "Read article", @link.url, target: "_blank", class: "url"
