@@ -39,7 +39,32 @@ Rails current_page? Syntax:
 	current_page?(url_for(:controller => 'pages', :action => 'main'))
 	--It seems the helper expects a string (above example).
 
-**************************************************************************************************
+*********************************************************************************************
+before_filters:
+	run before any of the controller methods
+
+	Before filters can take options. For example, if we only wanted this to run on the create action, we could use this instead:
+		before_filter :authenticate_user!, :only => [:create]
+
+	 You can make any action into a before filter: 
+	 EXAMPLE:
+		class CommentsController < ApplicationController
+  			before_filter :redirect_back_unless_logged_in
+
+  			def create
+   				@comment = Comment.create(params[:comment])
+   				redirect_to :back
+ 				end
+
+  			private 
+
+  			def redirect_back_unless_logged_in
+    			redirect_to :back unless current_user.present?
+  			end
+		end
+
+
+*********************************************************************************************
 DB commands:
 (rails 3.2.12)
 
