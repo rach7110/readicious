@@ -3,8 +3,7 @@ class CommentsController < ApplicationController
 before_filter :authenticate_user!, :only => [:create]
 
 	def create
-		@comment = Comment.create(params[:comment])
-		 @comment = current_user.comments.create(params[:comment].merge(link_id: params[:link_id]))
+		@comment = current_user.comments.create(params[:comment].merge(link_id: params[:link_id]))
 		# When a comment is created, redirect the user back to the same view:
 		redirect_to :back
 	end
