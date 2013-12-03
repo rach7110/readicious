@@ -1,10 +1,10 @@
 %h1
 	=@link.title
 %p
-	=link_to "#{@link.url}", @link.url, target: "_blank", class: "url"
-
+	=link_to "Read article", @link.url, target: "_blank", class: "url"
+%br
 %table
 	%tr
-		%td= link_to "Show", link_path
+		/ %td= link_to "Show", link_path
 		%td= link_to 'Edit', edit_link_path
 		%td= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }

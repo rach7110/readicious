@@ -12,12 +12,12 @@ class LinksController < ApplicationController
 	end
 
 	def create
-		@link = Link.new(params[:link])
-		if @link.save
-			redirect_to @link
-		else
-			render action: "new"
-		end 
-
+		render text: params[:link].inspect
+		# @link = Link.new(params[:link])
+		# if @link.save
+		# 	redirect_to @link
+		# else
+		# 	render action: "new"
+		# end 
 	end
 end
