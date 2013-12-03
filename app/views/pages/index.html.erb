@@ -1,8 +1,0 @@
-<%= link_to "Add a New Article", new_link_path %>
-</br>
-</br>
-<h2>What to read:</h2>
-<%- @links.each do |l| %>
-	<%= link_to l.title, l %>
-	</br>
-<%- end %>
