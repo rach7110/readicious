@@ -20,6 +20,14 @@
 /*	border: 1px black dashed;*/
 }
 
+#alert {
+
+}
+
+.notice {
+	color: purple;
+}
+
 #wrapper {
 	position: relative;
 }

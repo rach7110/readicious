@@ -1,0 +1,19 @@
+= form_for(@link) do |l|
+  - if @link.errors.any?
+    #alert
+      %h2= pluralize(@link.errors.count, "error") + "prohibited this idea from being saved:"
+
+      %ul
+        - @idea.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = l.label :title
+    %br
+    = l.text_field :title
+  .field
+    = l.label :url
+    %br
+    = l.text_field :url
+  .actions= l.submit
+
+= link_to 'Back', link_path

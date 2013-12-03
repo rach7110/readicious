@@ -32,4 +32,11 @@ class LinksController < ApplicationController
 			render action: "edit"
 		end
 	end
+
+	def destroy
+		@link = Link.find(params[:id])
+		@link.destroy
+		redirect_to root_path
+	end
+	
 end
