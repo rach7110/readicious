@@ -5,6 +5,8 @@ class LinksController < ApplicationController
 
 	def show
 		@link = Link.find(params[:id])
+		@comment = @link.comments.build
+		# build method creates a new comment that is already asssociated with @comment
 	end
 
 	def new

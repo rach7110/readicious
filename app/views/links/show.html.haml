@@ -9,3 +9,22 @@
 		%td= link_to 'Edit', edit_link_path
 		%td= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }
 %br
+/ Form to add comments: 
+/ By passing an array to form_for, it specifies that @comment is related to @link - in this case, it belongs_to the link.
+= form_for [@link, @comment] do |f|
+	- if @comment.errors.any?
+		#error_explanation
+			%h2= pluralize(@comment.errors.count, "error") + "prohibited this idea from being saved:"
+			%ul
+				- @comment.errors.full_messages.each do |msg|
+					%li= msg
+	.field
+		= f.label :message
+		%br
+		= f.text_area :message, :placeholder => "Add a comment"
+	.actions= f.submit
+
+%h2 Comments:
+%div
+	- @link.comments.each do |comment|
+		%p= comment.message
