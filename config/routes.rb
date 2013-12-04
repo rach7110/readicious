@@ -6,7 +6,19 @@ Readit::Application.routes.draw do
 
   root to: 'pages#index'
   resources :pages
-  resources :links
+  # Nested resources -the URLs for creating comments should be NESTED under /links:
+  resources :links do
+    resources :comments
+  end
+
+  # Routes - nested resources: 
+ #     link_comments GET    /links/:link_id/comments(.:format)          comments#index
+ #                   POST   /links/:link_id/comments(.:format)          comments#create
+ #  new_link_comment GET    /links/:link_id/comments/new(.:format)      comments#new
+ # edit_link_comment GET    /links/:link_id/comments/:id/edit(.:format) comments#edit
+ #      link_comment GET    /links/:link_id/comments/:id(.:format)      comments#show
+ #                   PUT    /links/:link_id/comments/:id(.:format)      comments#update
+ #                   DELETE /links/:link_id/comments/:id(.:format)      comments#destroy
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
